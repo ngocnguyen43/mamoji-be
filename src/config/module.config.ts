@@ -1,4 +1,4 @@
-export default {
+export default () => ({
     PORT: 3001,
     REDIS_PORT: process.env.REDIS_PORT_DEV || 1051,
     REDIS_HOST: process.env.REDIS_HOST || '127.0.0.1',
@@ -14,4 +14,4 @@ export default {
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET || "",
     FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID || "",
     FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET || ""
-};
+});

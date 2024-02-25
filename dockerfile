@@ -3,8 +3,6 @@ FROM node:18-alpine as build
 WORKDIR /app
 RUN apk add --no-cache libc6-compat
 
-ENV NODE_ENV production
-
 COPY . .
 
 RUN npm i

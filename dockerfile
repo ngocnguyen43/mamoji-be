@@ -5,8 +5,7 @@ RUN apk add --no-cache libc6-compat
 
 ENV NODE_ENV production
 
-COPY --chown=node:node --from=dev /app/node_modules ./node_modules
-COPY --chown=node:node . .
+COPY . .
 
 RUN npm run build
 RUN npm ci && npm i

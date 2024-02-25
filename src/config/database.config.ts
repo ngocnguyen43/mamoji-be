@@ -11,6 +11,6 @@ export default registerAs(
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
         autoLoadEntities: true,
-        synchronize: process.env.NODE_ENV ? false : true,
+        synchronize: true,
     }),
 );

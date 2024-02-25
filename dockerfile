@@ -28,4 +28,4 @@ COPY --chown=node:node --from=build /app/node_modules node_modules
 
 USER node
 
-CMD ["export","PORT=3333","doppler","run","--","node", "dist/main.js"]
+CMD ["doppler","run","--","node", "dist/main.js"]

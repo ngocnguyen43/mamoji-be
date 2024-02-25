@@ -7,8 +7,8 @@ ENV NODE_ENV production
 
 COPY . .
 
-RUN npm run build
 RUN npm ci && npm i
+RUN npm run build
 
 USER node
 
@@ -19,7 +19,7 @@ RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.ke
     echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
     apk add doppler
 
-ARG DOPPLER_TOKEN
+ARG DOPPLER_TOKEN--chown=node:node 
 
 ENV NODE_ENV production
 ENV DOPPLER_TOKEN ${DOPPLER_TOKEN}

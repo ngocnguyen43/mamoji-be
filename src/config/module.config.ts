@@ -1,5 +1,5 @@
 export default () => ({
-    PORT: 3001,
+    PORT: process.env.PORT || 3001,
     REDIS_PORT: process.env.REDIS_PORT_DEV || 1051,
     REDIS_HOST: process.env.REDIS_HOST || '127.0.0.1',
     MESSAGE_BROKER_URL: process.env.MESSAGE_BROKER_URL_DEV || 'amqp://127.0.0.1:5672',

@@ -1,19 +1,23 @@
-import { Controller, Get, Inject, Post } from '@nestjs/common';
-import { SocketService } from '../socket/socket.service';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { GameService } from './game.service';
+import { PlayerDto } from './dto/player.dto';
 
 @Controller({
     path: "game",
     version: "2"
 })
 export class GameController {
-    constructor(private readonly SocketService: SocketService) { }
+    constructor(
+        private readonly GameService: GameService) { }
     @Get()
     async GetAll() {
-        return ["ABC"]
+        return await this.GameService.findAll()
     }
     @Post()
-    async Create() {
-        this.SocketService.socket.to("1").emit("hehee", { x: 1 })
+    async Create(@Body() player: PlayerDto) {
+        console.log(player);
+
+        return await this.GameService.createOne(player)
     }
 
 }

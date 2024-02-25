@@ -7,7 +7,7 @@ ENV NODE_ENV production
 
 COPY . .
 
-RUN npm ci && npm i
+RUN npm i
 RUN npm run build
 
 USER node

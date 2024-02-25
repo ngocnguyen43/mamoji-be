@@ -17,7 +17,7 @@ RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.ke
     echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
     apk add doppler
 
-ARG DOPPLER_TOKEN--chown=node:node 
+ARG DOPPLER_TOKEN
 
 ENV NODE_ENV production
 ENV DOPPLER_TOKEN ${DOPPLER_TOKEN}
